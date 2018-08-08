@@ -49,5 +49,11 @@
     <Compile Include="CustomerRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Collection.DAL\Collection.DAL.csproj">
+      <Project>{3952b03f-3aa1-46f2-ae2f-7e31d138fe11}</Project>
+      <Name>Collection.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

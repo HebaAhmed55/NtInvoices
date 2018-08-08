@@ -48,7 +48,7 @@ namespace Collection.Repository
             context.Entry(customer).State = EntityState.Modified;
         }
 
-        public void Commit()
+        public void CommitCustomer()
         {
             context.SaveChanges();
         }
