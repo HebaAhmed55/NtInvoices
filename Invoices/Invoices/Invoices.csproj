@@ -279,6 +279,16 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Collection.DAL\Collection.DAL.csproj">
+      <Project>{3952b03f-3aa1-46f2-ae2f-7e31d138fe11}</Project>
+      <Name>Collection.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Collection.DSL\Collection.DSL.csproj">
+      <Project>{5d265775-ea08-4f39-a6de-37f2b3763d1f}</Project>
+      <Name>Collection.DSL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

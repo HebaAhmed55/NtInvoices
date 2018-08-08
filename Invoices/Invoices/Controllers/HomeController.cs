@@ -9,11 +9,7 @@ namespace Invoices.Controllers
 {
     public class HomeController : Controller
     {
-        CustomerDSL c = new CustomerDSL();
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
 
         public ActionResult About()
         {
@@ -32,15 +28,11 @@ namespace Invoices.Controllers
             return View();
         }
 
-        [HttpGet]
         public ActionResult Setup()
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Setup(Customer cu) {
-            c.InsertCustomer(cu);
-            return Content("ADDED");
-        }
+        
+       
     }
 }

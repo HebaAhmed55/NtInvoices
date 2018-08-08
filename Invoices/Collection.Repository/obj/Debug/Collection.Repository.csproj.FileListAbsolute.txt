@@ -10,3 +10,14 @@ C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\obj\Deb
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.DAL.dll
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.DAL.pdb
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.DAL.dll.config
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.Repository.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.Repository.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.DAL.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\bin\Debug\EntityFramework.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.DAL.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\bin\Debug\EntityFramework.xml
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\obj\Debug\Collection.Repository.csprojResolveAssemblyReference.cache
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\obj\Debug\Collection.Repository.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.Repository\obj\Debug\Collection.Repository.pdb
