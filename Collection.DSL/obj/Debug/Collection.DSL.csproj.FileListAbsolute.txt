@@ -1,0 +1,5 @@
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DSL\bin\Debug\Collection.DSL.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DSL\bin\Debug\Collection.DSL.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DSL\obj\Debug\Collection.DSL.csprojResolveAssemblyReference.cache
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DSL\obj\Debug\Collection.DSL.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DSL\obj\Debug\Collection.DSL.pdb

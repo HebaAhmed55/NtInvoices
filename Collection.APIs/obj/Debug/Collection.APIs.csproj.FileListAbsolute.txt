@@ -1,0 +1,5 @@
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.APIs\bin\Debug\Collection.APIs.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.APIs\bin\Debug\Collection.APIs.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.APIs\obj\Debug\Collection.APIs.csprojResolveAssemblyReference.cache
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.APIs\obj\Debug\Collection.APIs.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.APIs\obj\Debug\Collection.APIs.pdb

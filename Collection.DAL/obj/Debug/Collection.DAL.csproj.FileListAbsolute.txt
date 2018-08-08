@@ -1,0 +1,10 @@
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\bin\Debug\Collection.DAL.dll.config
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\bin\Debug\Collection.DAL.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\bin\Debug\Collection.DAL.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\obj\Debug\Collection.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\obj\Debug\Collection.DAL.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.DAL\obj\Debug\Collection.DAL.pdb

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>6bc26280-8813-4515-a0c9-ab7afd8b29ce</ProjectGuid>
+    <ProjectGuid>723fcb80-5372-4ffa-8c2c-22a965ff4816</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Collection.Pepository</RootNamespace>
-    <AssemblyName>Collection.Pepository</AssemblyName>
+    <RootNamespace>Collection.Repository</RootNamespace>
+    <AssemblyName>Collection.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
