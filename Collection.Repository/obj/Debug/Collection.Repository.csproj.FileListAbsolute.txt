@@ -1,4 +1,0 @@
-C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.Repository\bin\Debug\Collection.Repository.dll
-C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.Repository\bin\Debug\Collection.Repository.pdb
-C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.Repository\obj\Debug\Collection.Repository.dll
-C:\Users\Heba\Documents\GitHub\NtInvoices\Collection.Repository\obj\Debug\Collection.Repository.pdb
