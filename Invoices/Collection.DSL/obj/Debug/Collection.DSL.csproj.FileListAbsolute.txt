@@ -5,3 +5,8 @@ C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\obj\Debug\Coll
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\obj\Debug\Collection.DSL.pdb
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.Repository.dll
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.Repository.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DAL.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\EntityFramework.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DAL.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DAL.dll.config
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\EntityFramework.xml

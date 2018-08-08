@@ -7,3 +7,6 @@ C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\bin\Deb
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\obj\Debug\Collection.Repository.dll
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\obj\Debug\Collection.Repository.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.DAL.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.DAL.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.Repository\bin\Debug\Collection.DAL.dll.config
