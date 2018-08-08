@@ -10,3 +10,14 @@ C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\Enti
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DAL.pdb
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DAL.dll.config
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DSL\bin\Debug\EntityFramework.xml
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DSL.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DSL.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DAL.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.Repository.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\bin\Debug\EntityFramework.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.DAL.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\bin\Debug\Collection.Repository.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\bin\Debug\EntityFramework.xml
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\obj\Debug\Collection.DSL.csprojResolveAssemblyReference.cache
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\obj\Debug\Collection.DSL.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DSL\obj\Debug\Collection.DSL.pdb

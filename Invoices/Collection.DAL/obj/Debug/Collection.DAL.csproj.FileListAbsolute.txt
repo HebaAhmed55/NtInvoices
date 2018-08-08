@@ -8,3 +8,13 @@ C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DAL\bin\Debug\Enti
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DAL\obj\Debug\Collection.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DAL\obj\Debug\Collection.DAL.dll
 C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Collection.DAL\obj\Debug\Collection.DAL.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\bin\Debug\Collection.DAL.dll.config
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\bin\Debug\Collection.DAL.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\bin\Debug\Collection.DAL.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\bin\Debug\EntityFramework.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\bin\Debug\EntityFramework.xml
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\obj\Debug\Collection.DAL.csprojResolveAssemblyReference.cache
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\obj\Debug\Collection.DAL.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Collection.DAL\obj\Debug\Collection.DAL.pdb

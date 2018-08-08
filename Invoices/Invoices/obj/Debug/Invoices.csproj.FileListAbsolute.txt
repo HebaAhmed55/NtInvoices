@@ -190,3 +190,9 @@ D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Microsoft.AI.Web.xml
 D:\NtInvoices-master\NtInvoices\Invoices\Invoices\obj\Debug\Invoices.csprojResolveAssemblyReference.cache
 D:\NtInvoices-master\NtInvoices\Invoices\Invoices\obj\Debug\Invoices.dll
 D:\NtInvoices-master\NtInvoices\Invoices\Invoices\obj\Debug\Invoices.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.DAL.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.DSL.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.Repository.dll
+D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.DAL.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.DSL.pdb
+D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.Repository.pdb
