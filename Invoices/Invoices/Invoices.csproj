@@ -260,7 +260,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Customer\Create.cshtml" />
+=======
+    <Content Include="Views\Customer\Setup.cshtml" />
+    <Content Include="Views\Customer\Setup2.cshtml" />
+>>>>>>> 47dd455e3d786efc8874eb3e72b1d601174c1ed2
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
