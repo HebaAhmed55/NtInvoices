@@ -32,15 +32,11 @@ namespace Invoices.Controllers
             return View();
         }
 
-        [HttpGet]
         public ActionResult Setup()
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Setup(Customer cu) {
-            c.InsertCustomer(cu);
-            return Content("ADDED");
-        }
+        
+       
     }
 }
