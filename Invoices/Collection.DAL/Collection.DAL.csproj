@@ -49,11 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comment.cs">
+      <DependentUpon>Invoices.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>Invoices.tt</DependentUpon>
+    </Compile>
     <Compile Include="CustomerDAL.cs" />
+    <Compile Include="Invoice.cs">
+      <DependentUpon>Invoices.tt</DependentUpon>
+    </Compile>
     <Compile Include="Invoices.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Invoices.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Invoices.tt</DependentUpon>
     </Compile>
     <Compile Include="Invoices.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -61,6 +75,9 @@
       <DependentUpon>Invoices.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>Invoices.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Invoices.edmx">
@@ -79,6 +96,12 @@
     <Content Include="Invoices.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Invoices.Context.cs</LastGenOutput>
+      <DependentUpon>Invoices.edmx</DependentUpon>
+    </Content>
+    <Content Include="Invoices.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Invoices.edmx</DependentUpon>
+      <LastGenOutput>Invoices.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
