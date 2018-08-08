@@ -196,3 +196,10 @@ D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.Repository.dll
 D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.DAL.pdb
 D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.DSL.pdb
 D:\NtInvoices-master\NtInvoices\Invoices\Invoices\bin\Collection.Repository.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Invoices\bin\Collection.DAL.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Invoices\bin\Collection.DSL.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Invoices\bin\Collection.Repository.dll
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Invoices\bin\Collection.DAL.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Invoices\bin\Collection.DAL.dll.config
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Invoices\bin\Collection.DSL.pdb
+C:\Users\Heba\Documents\GitHub\NtInvoices\Invoices\Invoices\bin\Collection.Repository.pdb
