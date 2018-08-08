@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Collection.DSL;
+using Collection.DAL;
 namespace Invoices.Controllers
 {
     public class HomeController : Controller
     {
+        CustomerDSL c = new CustomerDSL();
         public ActionResult Index()
         {
             return View();
@@ -29,8 +31,16 @@ namespace Invoices.Controllers
         public ActionResult Invoice() {
             return View();
         }
-        public ActionResult Setup() {
+
+        [HttpGet]
+        public ActionResult Setup()
+        {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Setup(Customer cu) {
+            c.InsertCustomer(cu);
+            return Content("ADDED");
         }
     }
 }
