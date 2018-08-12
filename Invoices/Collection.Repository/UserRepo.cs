@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Collection.Repository
 {
-   public class UserRepo
+    public class UserRepo
     {
         public static InvoicesEntities2 context3 = new InvoicesEntities2();
 
@@ -22,6 +22,15 @@ namespace Collection.Repository
             return context3.Users.Find(id);
         }
 
+        public bool login(User user)
+        {
+            var obj = context3.Users.Where(a => a.UserName.Equals(user.UserName) && a.Password.Equals(user.Password)).FirstOrDefault();
+            if (obj != null)
+            {
+                return true;
+            }
+            return false;
+        }
         public void InsertUser(User user)
         {
             context3.Users.Add(user);

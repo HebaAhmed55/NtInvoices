@@ -25,7 +25,11 @@ namespace Collection.DSL
             var user = repo.GetUserByID(id);
             return user;
         }
+        public bool login(User user)
 
+        {
+            return repo.login(user);
+        }
         public void InsertUser(User user)
         {
 

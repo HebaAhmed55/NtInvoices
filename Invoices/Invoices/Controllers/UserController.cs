@@ -22,9 +22,37 @@ namespace Invoices.Controllers
             return View(u.GetUsers());
         }
 
-       
-        // GET: Users/Create
-        public ActionResult CreateUser()
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(User objUser)
+        {
+            if (u.login(objUser))
+            {
+                Session["UserId"] = objUser.UserId;
+                return RedirectToAction("UserIndex");
+            }
+            ViewBag.DublicateMessage = "Invalid username or password";
+            return View(objUser);
+        }
+
+        public ActionResult UserDashBoard()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+            // GET: Users/Create
+            public ActionResult CreateUser()
         {
             ViewBag.Type_id = new SelectList(t.GetTypes(), "Id", "type1");
             return View();
