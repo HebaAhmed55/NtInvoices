@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentRepo.cs" />
     <Compile Include="CustomerRepo.cs" />
+    <Compile Include="InvoiceRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeRepo.cs" />
+    <Compile Include="UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Collection.DAL\Collection.DAL.csproj">

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Collection.DAL.Customer>
+
+@{
+    ViewBag.Title = "CustomerIndex";
+}
+
+<h2>CustomerIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateCustomer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditCustomer", new { id = item.CustomerId }) |
+                @Html.ActionLink("Delete", "DeleteCustomer", new { id = item.CustomerId })
+            </td>
+        </tr>
+    }
+
+</table>

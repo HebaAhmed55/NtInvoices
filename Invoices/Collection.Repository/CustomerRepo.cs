@@ -13,15 +13,9 @@ namespace Collection.Repository
 
     public class CustomerRepo
     {
-         private InvoicesEntities context;
         
-
-
-        public CustomerRepo()
-        {
-            context = new InvoicesEntities ();
-        }
-
+        public static InvoicesEntities2 context = new InvoicesEntities2();
+        
         public IEnumerable<Customer> GetCustomers()
         {
             return context.Customers.ToList();
@@ -41,11 +35,20 @@ namespace Collection.Repository
         {
             Customer customer = context.Customers.Find(CustomerId);
             context.Customers.Remove(customer);
+
         }
 
+       
         public void UpdateCustomer(Customer customer)
         {
-            context.Entry(customer).State = EntityState.Modified;
+
+            var c = context.Customers.FirstOrDefault(d => d.CustomerId == customer.CustomerId);
+
+            context.Customers.FirstOrDefault(d => d.CustomerId == customer.CustomerId).CustomerName = customer.CustomerName;
+            context.Customers.FirstOrDefault(d => d.CustomerId == customer.CustomerId).Active = customer.Active;
+            //context.Entry(customer).State = EntityState.Detached;
+            //context.Entry(customer).State = EntityState.Modified;
+            CommitCustomer();
         }
 
         public void CommitCustomer()
@@ -53,26 +56,7 @@ namespace Collection.Repository
             context.SaveChanges();
         }
 
-        //    private bool disposed = false;
-
-        //    protected virtual void Dispose(bool disposing)
-        //    {
-        //        if (!this.disposed)
-        //        {
-        //            if (disposing)
-        //            {
-        //                context.Dispose();
-        //            }
-        //        }
-        //        this.disposed = true;
-        //    }
-
-        //    public void Dispose()
-        //    {
-        //        Dispose(true);
-        //        GC.SuppressFinalize(this);
-        //    }
-        //}
+        
     }
 }
 

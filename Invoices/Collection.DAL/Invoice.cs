@@ -15,7 +15,7 @@ namespace Collection.DAL
     public partial class Invoice
     {
         public int InvoiceId { get; set; }
-        public int InvoiceNo { get; set; }
+        public Nullable<int> InvoiceNo { get; set; }
         public System.DateTime IssueDate { get; set; }
         public decimal Amount { get; set; }
         public System.DateTime CollectDate { get; set; }

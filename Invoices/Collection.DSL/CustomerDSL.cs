@@ -20,7 +20,7 @@ namespace Collection.DSL
             return list;
 
         }
-        public Customer GetCustomerByByID(int id)
+        public Customer GetCustomerByID(int id)
 
         {
             var customer = repo.GetCustomerByID(id);
@@ -29,12 +29,22 @@ namespace Collection.DSL
 
         public void InsertCustomer(Customer customer)
         {
+            //List<Customeres> ListCustomer = GetCustomerList();
+            //int Count = ListCustomer.Count();
+            //foreach (var o in ListCustomer)
+            //{
+            //    if (o.CustomerNo >= Count)
+            //    {
+            //        Count = o.CustomerNo + 1;
+            //    }
+            //}
             repo.InsertCustomer(customer);
         }
         public void DeleteCustomer(int id)
         {
             repo.DeleteCustomer(id);
         }
+        
         public void UpdateCustomer(Customer customer)
         {
             repo.UpdateCustomer(customer);

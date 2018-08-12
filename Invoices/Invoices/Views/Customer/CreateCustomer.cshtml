@@ -2,18 +2,15 @@
 @model Collection.DAL.Customer
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "CreateCustomer";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create","Customer", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>LockupAttribute</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -43,7 +40,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "CustomerIndex")
 </div>
 
 @section Scripts {

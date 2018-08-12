@@ -13,10 +13,10 @@ namespace Collection.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class InvoicesEntities : DbContext
+    public partial class InvoicesEntities2 : DbContext
     {
-        public InvoicesEntities()
-            : base("name=InvoicesEntities")
+        public InvoicesEntities2()
+            : base("name=InvoicesEntities2")
         {
         }
     
@@ -28,6 +28,7 @@ namespace Collection.DAL
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
+        public virtual DbSet<Type> Types { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

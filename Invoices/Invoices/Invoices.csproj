@@ -189,9 +189,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,7 +229,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -260,9 +265,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Customer\Create.cshtml" />
-    <Content Include="Views\Customer\Setup.cshtml" />
+    <Content Include="Views\Customer\CreateCustomer.cshtml" />
     <Content Include="Views\Customer\Setup2.cshtml" />
+    <Content Include="Views\Customer\CustomerIndex.cshtml" />
+    <Content Include="Views\Customer\EditCustomer.cshtml" />
+    <Content Include="Views\Customer\DeleteCustomer.cshtml" />
+    <Content Include="Views\Invoice\InvoiceIndex.cshtml" />
+    <Content Include="Views\Invoice\CreateInvoice.cshtml" />
+    <Content Include="Views\Invoice\EditInvoice.cshtml" />
+    <Content Include="Views\User\UserIndex.cshtml" />
+    <Content Include="Views\User\DeleteUser.cshtml" />
+    <Content Include="Views\User\EditUser.cshtml" />
+    <Content Include="Views\Comment\CommentIndex.cshtml" />
+    <Content Include="Views\Comment\CreateComment.cshtml" />
+    <Content Include="Views\User\CreateUser.cshtml" />
+    <Content Include="Views\Invoice\DeleteInvoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

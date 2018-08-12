@@ -21,7 +21,7 @@ namespace Collection.DAL
         }
     
         public int CustomerId { get; set; }
-        public int CustomerNo { get; set; }
+        public Nullable<int> CustomerNo { get; set; }
         public string CustomerName { get; set; }
         public Nullable<bool> Active { get; set; }
     

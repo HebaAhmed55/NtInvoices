@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="InvoicesModelStoreContainer" CdmEntityContainer="InvoicesEntities">
+  <EntityContainerMapping StorageEntityContainer="InvoicesModelStoreContainer" CdmEntityContainer="InvoicesEntities1">
     <EntitySetMapping Name="Comments">
       <EntityTypeMapping TypeName="InvoicesModel.Comment">
         <MappingFragment StoreEntitySet="Comment">
@@ -37,6 +37,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Types">
+      <EntityTypeMapping TypeName="InvoicesModel.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="type1" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="InvoicesModel.User">
         <MappingFragment StoreEntitySet="User">
@@ -46,7 +54,7 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
