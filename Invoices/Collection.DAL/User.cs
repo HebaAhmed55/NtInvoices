@@ -13,8 +13,8 @@ namespace Collection.DAL
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
-    [Serializable]
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,20 +22,43 @@ namespace Collection.DAL
         {
             this.Comments = new HashSet<Comment>();
         }
-    
+
+        
+        [Display(Name = "User ID")]
         public int UserId { get; set; }
-        public Nullable<int> UserNo { get; set; }
+        
+
+        [Display(Name = "User NO")]
+        public int UserNo { get; set; }
+
+        
+        [Display(Name = "Status")]
         public Nullable<bool> Active { get; set; }
+
+        [Required]
+        [Display(Name = "Name")]
         public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
+        [Required]
+        [Display(Name = "Password")]
         [DataType(DataType.Password)]
+        [RegularExpression("[A-Za-z0-9=+-@#$&%]{6,}", ErrorMessage = "Password should be more than 6 charchters ")] 
         public string Password { get; set; }
+
 
         [DisplayName("Confirm Password")]
         [DataType(DataType.Password)]
-        [Compare("Password")]
+        [Compare("Password", ErrorMessage = "Password doesn't match.")]
+        //[NotMapped]
         public string ConfirmPassword { get; set; }
+
+
+        [Required]
+        [DisplayName("Type")]
         public int Type_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

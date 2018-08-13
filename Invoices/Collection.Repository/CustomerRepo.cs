@@ -16,7 +16,7 @@ namespace Collection.Repository
         
         public static InvoicesEntities2 context = new InvoicesEntities2();
         
-        public IEnumerable<Customer> GetCustomers()
+        public List<Customer> GetCustomers()
         {
             return context.Customers.ToList();
         }

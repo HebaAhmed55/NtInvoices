@@ -12,10 +12,10 @@ using Collection.DAL;
 
         InvoiceRepo repo = new InvoiceRepo();
 
-    public IEnumerable<Invoice> GetInvoices()
+    public List<Invoice> GetInvoices()
     {
-        var list = repo.GetInvoices();
-        return list;
+        var list2 = repo.GetInvoices();
+        return list2;
 
     }
     public Invoice GetInvoiceByID(int id)
@@ -27,7 +27,14 @@ using Collection.DAL;
 
     public void InsertInvoice(Invoice invoice)
     {
-        
+        List<Invoice> list = repo.GetInvoices();
+        int Count = list.Count();
+        foreach(var o in list)
+        {
+            if(o.InvoiceNo >= Count) { Count = o.InvoiceNo + 1; }
+        }
+        invoice.InvoiceNo = Count;
+
         repo.InsertInvoice(invoice);
     }
     public void DeleteInvoice(int id)

@@ -17,7 +17,7 @@
       <PropertyRef Name="CustomerId" />
     </Key>
     <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CustomerNo" Type="Int32" />
+    <Property Name="CustomerNo" Type="Int32" Nullable="false" />
     <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Active" Type="Boolean" />
     <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoice_Customer" FromRole="Customer" ToRole="Invoice" />
@@ -27,7 +27,7 @@
       <PropertyRef Name="InvoiceId" />
     </Key>
     <Property Name="InvoiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="InvoiceNo" Type="Int32" />
+    <Property Name="InvoiceNo" Type="Int32" Nullable="false" />
     <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="CollectDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -51,7 +51,7 @@
       <PropertyRef Name="UserId" />
     </Key>
     <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserNo" Type="Int32" />
+    <Property Name="UserNo" Type="Int32" Nullable="false" />
     <Property Name="Active" Type="Boolean" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />

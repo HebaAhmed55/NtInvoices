@@ -25,9 +25,15 @@ namespace Invoices.Controllers
         // POST: Customers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerName,Active")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerName,Active")] Customer customer, string check)
         {
-            if (ModelState.IsValid)
+            if (check == "on")
+            {
+                customer.Active = true;
+            }
+            else { customer.Active = false; }
+
+            if (customer != null)
             {
                 c.InsertCustomer(customer);
                 c.CommitCustomer();

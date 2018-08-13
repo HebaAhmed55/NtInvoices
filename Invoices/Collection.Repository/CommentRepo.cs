@@ -10,7 +10,7 @@ namespace Collection.Repository
     {
         public static InvoicesEntities2 context4 = new InvoicesEntities2();
 
-        public IEnumerable<Comment> GetComments()
+        public List<Comment> GetComments()
         {
             var comments = context4.Comments.Include(c => c.Invoice).Include(c => c.User);
 

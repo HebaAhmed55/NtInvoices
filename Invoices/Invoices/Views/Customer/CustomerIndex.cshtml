@@ -7,7 +7,7 @@
 <h2>CustomerIndex</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateCustomer")
+    @Html.ActionLink("Add Record", "CreateCustomer" , new { @class = "glyphicon glyphicon-plus" })
 </p>
 <table class="table">
     <tr>
@@ -20,7 +20,13 @@
         <th>
             @Html.DisplayNameFor(model => model.Active)
         </th>
-        <th></th>
+        <th>
+           Edit
+        </th>
+        <th>
+           Delete
+        </th>
+        
     </tr>
 
     @foreach (var item in Model)
@@ -36,9 +42,12 @@
                 @Html.DisplayFor(modelItem => item.Active)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditCustomer", new { id = item.CustomerId }) |
-                @Html.ActionLink("Delete", "DeleteCustomer", new { id = item.CustomerId })
-            </td>
+                @Html.ActionLink("Edit", "EditCustomer", new { id = item.CustomerId }, new { @class = "glyphicon glyphicon-pencil" }) 
+               
+                </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteCustomer", new { id = item.CustomerId },new { @class = "glyphicon glyphicon-remove" })
+           </td>
         </tr>
     }
 

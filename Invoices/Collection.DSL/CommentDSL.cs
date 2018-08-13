@@ -13,10 +13,10 @@ namespace Collection.DSL
     {
         CommentRepo repo = new CommentRepo();
 
-        public IEnumerable<Comment> GetComments()
+        public List<Comment> GetComments()
         {
-            var list = repo.GetComments();
-            return list;
+            var list2 = repo.GetComments();
+            return list2;
 
         }
         public Comment GetCommentByID(int id)

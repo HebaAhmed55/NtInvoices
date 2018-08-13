@@ -13,7 +13,7 @@ namespace Collection.Repository
     {
         public static InvoicesEntities2 context = new InvoicesEntities2();
 
-        public IEnumerable<DAL.Type> GetTypes()
+        public List<DAL.Type> GetTypes()
         {
             return context.Types.ToList();
         }

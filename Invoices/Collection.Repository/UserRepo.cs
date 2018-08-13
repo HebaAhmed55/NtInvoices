@@ -11,7 +11,7 @@ namespace Collection.Repository
     {
         public static InvoicesEntities2 context3 = new InvoicesEntities2();
 
-        public IEnumerable<User> GetUsers()
+        public List<User> GetUsers()
         {
             var users = context3.Users.Include(u => u.Type);
             return context3.Users.ToList();
@@ -34,6 +34,7 @@ namespace Collection.Repository
         public void InsertUser(User user)
         {
             context3.Users.Add(user);
+            context3.SaveChanges();
         }
 
         public void DeleteUser(int UserId)

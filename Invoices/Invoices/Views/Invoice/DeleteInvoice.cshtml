@@ -90,8 +90,13 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "InvoiceIndex")
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+            <a href="@Url.Action("InvoiceIndex", "Invoice")" class="btn btn-default ">
+                <i class="icon-pencil icon-white"></i>
+                <span>
+                    <strong>Cancel</strong>
+                </span>
+            </a>
         </div>
     }
 </div>

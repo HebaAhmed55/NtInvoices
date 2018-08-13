@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<Collection.DAL.Invoice>
 @{
     ViewBag.Title = "InvoiceIndex";
+    List<Collection.DAL.Comment> Clist = ViewData["CommentList"] as List<Collection.DAL.Comment>;
 }
 
 <h2>InvoiceIndex</h2>
 
 
 <p>
-    @Html.ActionLink("Create New", "CreateInvoice")
+    @Html.ActionLink("Add Record", "CreateInvoice", new { @class = "glyphicon glyphicon-plus" })
 </p>
 <table class="table">
     <tr>
@@ -38,7 +39,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Customer.CustomerName)
         </th>
-        <th></th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Delete
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -66,14 +72,17 @@
                 @Html.DisplayFor(modelItem => item.Collected)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Comment.Comment1)
+                <input type="submit" value="Comment" class="btn btn-default" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Customer.CustomerName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditInvoice", new { id = item.InvoiceId }) |
-                @Html.ActionLink("Delete", "DeleteInvoice", new { id = item.InvoiceId })
+                @Html.ActionLink("Edit", "EditInvoice", new { id = item.InvoiceId }, new { @class = "glyphicon glyphicon-pencil" }) 
+               
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteInvoice", new { id = item.InvoiceId }, new { @class = "glyphicon glyphicon-remove" })
             </td>
         </tr>
     }

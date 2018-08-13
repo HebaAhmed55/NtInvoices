@@ -15,7 +15,7 @@
       <PropertyRef Name="CustomerId" />
     </Key>
     <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CustomerNo" Type="int" />
+    <Property Name="CustomerNo" Type="int" Nullable="false" />
     <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
     <Property Name="Active" Type="bit" />
   </EntityType>
@@ -24,7 +24,7 @@
       <PropertyRef Name="InvoiceId" />
     </Key>
     <Property Name="InvoiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="InvoiceNo" Type="int" />
+    <Property Name="InvoiceNo" Type="int" Nullable="false" />
     <Property Name="IssueDate" Type="datetime" Nullable="false" />
     <Property Name="Amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="CollectDate" Type="datetime" Nullable="false" />
@@ -45,7 +45,7 @@
       <PropertyRef Name="UserId" />
     </Key>
     <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserNo" Type="int" />
+    <Property Name="UserNo" Type="int" Nullable="false" />
     <Property Name="Active" Type="bit" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />

@@ -42,7 +42,7 @@ namespace Invoices.Controllers
 
         public ActionResult UserDashBoard()
         {
-            if (Session["UserID"] != null)
+            if (Session["UserId"] != null)
             {
                 return View();
             }
@@ -51,27 +51,37 @@ namespace Invoices.Controllers
                 return RedirectToAction("Login");
             }
         }
-            // GET: Users/Create
-            public ActionResult CreateUser()
+
+        
+
+        // GET: Users/Create
+        public ActionResult CreateUser()
         {
             ViewBag.Type_id = new SelectList(t.GetTypes(), "Id", "type1");
+           
             return View();
         }
-
+      
         // POST: Users/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Active,Name,UserName,Password,Type_id")] User user)
+        //[ValidateAntiForgeryToken]
+        public ActionResult CreateUser( User user,string check)
         {
-            if (ModelState.IsValid)
+            if(check == "on")
             {
+                user.Active = true;
+            }
+            else { user.Active = false; }
 
+
+            if (user !=null)
+            {
                 u.InsertUser(user);
-               u.CommitUser();
+              
                 return RedirectToAction("UserIndex");
             }
 
-            ViewBag.Type_id = new SelectList(t.GetTypes(), "Id", "type1", user.Type_id);
+            ViewBag.Type_id = new SelectList(t.GetTypes(), "Id", "type", user.Type_id);
             return View(user);
         }
 

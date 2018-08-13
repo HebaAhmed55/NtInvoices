@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="InvoicesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="InvoicesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Comment">
           <Key>
             <PropertyRef Name="CommentId" />
@@ -20,7 +20,7 @@
             <PropertyRef Name="CustomerId" />
           </Key>
           <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerNo" Type="int" />
+          <Property Name="CustomerNo" Type="int" Nullable="false" />
           <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
           <Property Name="Active" Type="bit" />
         </EntityType>
@@ -29,7 +29,7 @@
             <PropertyRef Name="InvoiceId" />
           </Key>
           <Property Name="InvoiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="InvoiceNo" Type="int" />
+          <Property Name="InvoiceNo" Type="int" Nullable="false" />
           <Property Name="IssueDate" Type="datetime" Nullable="false" />
           <Property Name="Amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
           <Property Name="CollectDate" Type="datetime" Nullable="false" />
@@ -50,7 +50,7 @@
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserNo" Type="int" />
+          <Property Name="UserNo" Type="int" Nullable="false" />
           <Property Name="Active" Type="bit" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -128,8 +128,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="InvoicesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -150,7 +149,7 @@
             <PropertyRef Name="CustomerId" />
           </Key>
           <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerNo" Type="Int32" />
+          <Property Name="CustomerNo" Type="Int32" Nullable="false" />
           <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Active" Type="Boolean" />
           <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoice_Customer" FromRole="Customer" ToRole="Invoice" />
@@ -160,7 +159,7 @@
             <PropertyRef Name="InvoiceId" />
           </Key>
           <Property Name="InvoiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="InvoiceNo" Type="Int32" />
+          <Property Name="InvoiceNo" Type="Int32" Nullable="false" />
           <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="CollectDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -184,7 +183,7 @@
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserNo" Type="Int32" />
+          <Property Name="UserNo" Type="Int32" Nullable="false" />
           <Property Name="Active" Type="Boolean" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />

@@ -13,7 +13,7 @@ namespace Collection.Repository
     {
         public static InvoicesEntities2 context2 = new InvoicesEntities2();
 
-        public IEnumerable<Invoice> GetInvoices()
+        public List<Invoice> GetInvoices()
         {
             var invoices = context2.Invoices.Include(i => i.Comment).Include(i => i.Customer);
             return context2.Invoices.ToList();

@@ -14,10 +14,10 @@ namespace Collection.DSL
     {
         CustomerRepo repo = new CustomerRepo();
 
-        public IEnumerable<Customer> GetCustomers()
+        public List<Customer> GetCustomers()
         {
-            var list = repo.GetCustomers();
-            return list;
+            var list2 = repo.GetCustomers();
+            return list2;
 
         }
         public Customer GetCustomerByID(int id)
@@ -29,15 +29,17 @@ namespace Collection.DSL
 
         public void InsertCustomer(Customer customer)
         {
-            //List<Customeres> ListCustomer = GetCustomerList();
-            //int Count = ListCustomer.Count();
-            //foreach (var o in ListCustomer)
-            //{
-            //    if (o.CustomerNo >= Count)
-            //    {
-            //        Count = o.CustomerNo + 1;
-            //    }
-            //}
+
+            List<Customer> ListCustomer = GetCustomers();
+            int Count = ListCustomer.Count();
+            foreach (var o in ListCustomer)
+            {
+                if (o.CustomerNo >= Count)
+                {
+                    Count = o.CustomerNo + 1;
+                }
+            }
+            customer.CustomerNo = Count;
             repo.InsertCustomer(customer);
         }
         public void DeleteCustomer(int id)

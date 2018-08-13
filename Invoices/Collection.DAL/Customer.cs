@@ -11,7 +11,8 @@ namespace Collection.DAL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,19 @@ namespace Collection.DAL
         {
             this.Invoices = new HashSet<Invoice>();
         }
-    
+
+        [Display(Name = "Customer ID")]
         public int CustomerId { get; set; }
-        public Nullable<int> CustomerNo { get; set; }
+
+      
+        [Display(Name = "Customer NO")]
+        public int CustomerNo { get; set; }
+
+        [Required]
+        [Display(Name = "Customer")]
         public string CustomerName { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<bool> Active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

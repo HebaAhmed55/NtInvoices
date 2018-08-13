@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.InvoiceId)
@@ -60,7 +60,7 @@
             @Html.LabelFor(model => model.Suspended, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.Suspended)
+                    <input type="checkbox" name="check1" />
                     @Html.ValidationMessageFor(model => model.Suspended, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -70,7 +70,7 @@
             @Html.LabelFor(model => model.Collected, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.Collected)
+                    <input type="checkbox" name="check2" />
                     @Html.ValidationMessageFor(model => model.Collected, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -86,16 +86,32 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input value="Comment" class="btn btn-default" />
             </div>
         </div>
-    </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "InvoiceIndex")
-</div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+                <a href="@Url.Action("InvoiceIndex", "Invoice")" class="btn btn-default ">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Cancel</strong>
+                    </span>
+                </a>
+            </div>
+        </div>
+        @*class="btn btn-default"
+        class="btn btn-primary "*@
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+       
+            </div>
+       
+        
+        }
+
+
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

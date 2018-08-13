@@ -13,7 +13,7 @@ namespace Collection.DSL
     {
         TypeRepo repo = new TypeRepo();
 
-        public IEnumerable<DAL.Type> GetTypes()
+        public List<DAL.Type> GetTypes()
         {
             var list = repo.GetTypes();
             return list;

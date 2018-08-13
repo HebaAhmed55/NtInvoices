@@ -8,7 +8,7 @@
 
 
 <p>
-    @Html.ActionLink("Create New", "CreateUser")
+    @Html.ActionLink("Add Record", "CreateUser", new { @class = "glyphicon glyphicon-plus" })
 </p>
 <table class="table">
     <tr>
@@ -30,7 +30,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Type.type1)
         </th>
-        <th></th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Delete
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -55,8 +60,11 @@
                 @Html.DisplayFor(modelItem => item.Type.type1)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditUser", new { id = item.UserId }) |
-                @Html.ActionLink("Delete", "DeleteUser", new { id = item.UserId })
+                @Html.ActionLink("Edit", "EditUser", new { id = item.UserId }, new { @class = "glyphicon glyphicon-pencil" }) 
+                
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteUser", new { id = item.UserId }, new { @class = "glyphicon glyphicon-remove" })
             </td>
         </tr>
     }

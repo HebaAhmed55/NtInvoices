@@ -13,10 +13,10 @@ namespace Collection.DSL
     {
         UserRepo repo = new UserRepo();
 
-        public IEnumerable<User> GetUsers()
+        public List<User> GetUsers()
         {
-            var list = repo.GetUsers();
-            return list;
+            var list2 = repo.GetUsers();
+            return list2;
 
         }
         public User GetUserByID(int id)
@@ -30,10 +30,21 @@ namespace Collection.DSL
         {
             return repo.login(user);
         }
+
+       
+        
         public void InsertUser(User user)
         {
 
-            repo.InsertUser(user);
+
+            List<User> list = repo.GetUsers();
+            int Count = list.Count();
+            foreach (var o in list)
+            {
+                if (o.UserNo >= Count) { Count = o.UserNo + 1; }
+            }
+            user.UserNo = Count ;
+          repo.InsertUser(user);
         }
         public void DeleteUser(int id)
         {
