@@ -3,88 +3,237 @@
     ViewBag.Title = "InvoiceIndex";
     List<Collection.DAL.Comment> Clist = ViewData["CommentList"] as List<Collection.DAL.Comment>;
 }
+@Html.Hidden("InvoiceId")
 
 <h2>InvoiceIndex</h2>
 
 
 <p>
-    @Html.ActionLink("Add Record", "CreateInvoice", new { @class = "glyphicon glyphicon-plus" })
+    @Html.ActionLink("Add Record", "CreateInvoice",  new { @class = "glyphicon glyphicon-plus" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.InvoiceNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IssueDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Amount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CollectDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActCollectDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Suspended)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Collected)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comment.Comment1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer.CustomerName)
-        </th>
-        <th>
-            Edit
-        </th>
-        <th>
-            Delete
-        </th>
-    </tr>
+<p>
+    @Html.ActionLink("Search Invoices", "Search",  new { @class = "glyphicon glyphicon-search" })
+</p>
+<div class="panel panel-primary" id="list">
+    <div class="panel-heading">
+        Users
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.InvoiceNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IssueDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CollectDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActCollectDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Suspended)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Collected)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comment.Comment1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.CustomerName)
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.InvoiceNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IssueDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CollectDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActCollectDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Suspended)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Collected)
-            </td>
-            <td>
-                <input type="submit" value="Comment" class="btn btn-default" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditInvoice", new { id = item.InvoiceId }, new { @class = "glyphicon glyphicon-pencil" }) 
-               
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "DeleteInvoice", new { id = item.InvoiceId }, new { @class = "glyphicon glyphicon-remove" })
-            </td>
-        </tr>
-    }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InvoiceNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IssueDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CollectDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActCollectDate)
+                    </td>
+                    <td>
+                       @Html.DisplayFor(modelItem => item.Suspended)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Collected)
+                    </td>
+                    <td>
+                        <input type="submit" value="Comment" class="btn btn-default" onclick="openBox(@item.InvoiceId)"/>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditInvoice", new { id = item.InvoiceId }, new { @class = "glyphicon glyphicon-pencil" })
 
-</table>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "DeleteInvoice", new { id = item.InvoiceId }, new { @class = "glyphicon glyphicon-remove" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <table class="table table-bordered" id="commentTable">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Comment</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Clist)
+                {
+                    <tr>
+
+                        <td>@item.User.UserName</td>
+                        <td>@item.Comment1</td>
+                        <td>@item.Date</td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="form-group">
+
+            <textarea rows="10" cols="50" id="comm"></textarea>
+
+
+        </div>
+        <center>
+            <button id="#add" onclick="add()" type="button" data-dismiss="modal" class="btn btn-default">Add</button>
+        </center>
+
+    </div>
+
+</div>
+
+
+@section scripts{
+
+    <script>
+
+
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        /*btn.onclick = function () {
+            modal.style.display = "block";
+        }*/
+
+        function openBox(a) {
+            modal.style.display = "block";
+            document.getElementById('InvoiceId').val = a;
+            var b = document.getElementById('InvoiceId').val;
+
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function add() {
+            alert("once");
+            var comm = $("#comm").val();
+            var invoiceid = document.getElementById('InvoiceId').val;
+            $.ajax({
+                type: "POST",
+                url: '/Invoice/addComment',
+                data: { InvoiceId: invoiceid, Comment: comm },
+                type: "POST",
+
+                dataType: 'json',
+
+                success: function (data) {
+                    $('#commentTable tbody > tr').remove();
+                    $.each(data, function (index, item) {
+
+                        if (item.Invoice_ID == invoiceid) {
+                            var rows = "<tr>" +
+
+                                "<td>" + item.User.UserName + "</td>" +
+                                "<td>" + item.Comment1 + "</td>" +
+                                "<td>" + item.Date + "</td>" +
+                                "<td>" + "</td>" +
+
+                                +"</tr>";
+
+                            $('#commentTable').append(rows);
+
+                            }
+
+                        });
+                },
+                error: function (response) {
+                    alert("Invalid");
+                }
+
+            });
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+
+}

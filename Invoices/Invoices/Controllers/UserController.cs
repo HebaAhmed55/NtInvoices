@@ -28,15 +28,23 @@ namespace Invoices.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       // [ValidateAntiForgeryToken]
         public ActionResult Login(User objUser)
         {
-            if (u.login(objUser))
+
+            int id = u.login(objUser);
+
+            if (id>0)
             {
-                Session["UserId"] = objUser.UserId;
-                return RedirectToAction("UserIndex");
+                Session["UserId"] = id;
+                Session["UserName"] = objUser.UserName;
+                return RedirectToAction("Search","Invoice");
             }
-            ViewBag.DublicateMessage = "Invalid username or password";
+            else if(id == -1) 
+                { ViewBag.InvalidMessage = "Invalid username or password"; }
+            else
+            { ViewBag.WrongMessage = "Wrong username or password"; }
+
             return View(objUser);
         }
 
@@ -64,25 +72,28 @@ namespace Invoices.Controllers
       
         // POST: Users/Create
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+       // [ValidateAntiForgeryToken]
         public ActionResult CreateUser( User user,string check)
-        {
+        {  
             if(check == "on")
             {
                 user.Active = true;
             }
             else { user.Active = false; }
 
+           
 
             if (user !=null)
             {
+
                 u.InsertUser(user);
-              
+                u.CommitUser();
                 return RedirectToAction("UserIndex");
             }
-
-            ViewBag.Type_id = new SelectList(t.GetTypes(), "Id", "type", user.Type_id);
+          
+             ViewBag.Type_id = new SelectList(t.GetTypes(), "Id", "type", user.Type_id);
             return View(user);
+
         }
 
         // GET: Users/Edit/5

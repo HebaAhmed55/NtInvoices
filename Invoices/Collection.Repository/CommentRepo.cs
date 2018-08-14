@@ -4,6 +4,8 @@ using System.Data;
 using Collection.DAL;
 using System.Linq;
 using System.Collections.Generic;
+using System;
+
 namespace Collection.Repository
 {
      public class CommentRepo
@@ -24,7 +26,10 @@ namespace Collection.Repository
 
         public void InsertComment(Comment comment)
         {
+            comment.Date = DateTime.Now;
+             comment.CommentId = 3;
             context4.Comments.Add(comment);
+            context4.SaveChanges();
         }
 
         public void CommitComment()

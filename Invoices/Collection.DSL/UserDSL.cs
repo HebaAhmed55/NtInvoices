@@ -25,7 +25,7 @@ namespace Collection.DSL
             var user = repo.GetUserByID(id);
             return user;
         }
-        public bool login(User user)
+        public int login(User user)
 
         {
             return repo.login(user);
@@ -35,8 +35,6 @@ namespace Collection.DSL
         
         public void InsertUser(User user)
         {
-
-
             List<User> list = repo.GetUsers();
             int Count = list.Count();
             foreach (var o in list)
@@ -46,6 +44,7 @@ namespace Collection.DSL
             user.UserNo = Count ;
           repo.InsertUser(user);
         }
+
         public void DeleteUser(int id)
         {
             repo.DeleteUser(id);

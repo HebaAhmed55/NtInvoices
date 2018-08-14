@@ -24,10 +24,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Setup", "CreateUser", "User")</li> 
-                    <li>@Html.ActionLink("Invoice", "Search", "Invoice")</li>
+                    <li>@Html.ActionLink("Invoice", "InvoiceIndex", "Invoice")</li>
                     <li>@Html.ActionLink("Our Customers", "CustomerIndex", "Customer")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+                    <li>@Html.ActionLink("Log in", "Login", "User", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>

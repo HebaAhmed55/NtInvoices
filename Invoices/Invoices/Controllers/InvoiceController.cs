@@ -21,7 +21,6 @@ namespace Invoices.Controllers
         public ActionResult InvoiceIndex()
         {
            
-            return View(i.GetInvoices());
             var list = com.GetComments();
             ViewData["CommentList"] = list;
             return View(i.GetInvoices());
@@ -190,8 +189,30 @@ namespace Invoices.Controllers
             return A;
 
         }
+        ////////////////////////////////////////////////////////////////////////////////////////
+        public String addComment(string InvoiceId, String Comment)
+        {
+            string userid = Session["UserId"].ToString();
+            Comment c = new Comment();
+            c.Comment1 = Comment;
+            c.User_id = Convert.ToInt32(userid);
+            c.Invoice_id = Convert.ToInt32(InvoiceId);
+            com.InsertComment(c);
 
-        
+            var comments = com.GetComments();
+
+            var a = JsonConvert.SerializeObject(comments, Formatting.None,
+                      new JsonSerializerSettings()
+                      {
+                          ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                      });
+
+            return a;
+
+
+        }
+
+
 
     }
 }

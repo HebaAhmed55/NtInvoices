@@ -22,19 +22,24 @@ namespace Collection.Repository
             return context3.Users.Find(id);
         }
 
-        public bool login(User user)
+        public int login(User user)
         {
-            var obj = context3.Users.Where(a => a.UserName.Equals(user.UserName) && a.Password.Equals(user.Password)).FirstOrDefault();
+            var obj = context3.Users.Where(a => a.UserName.Equals(user.UserName) && 
+            a.Password.Equals(user.Password)).FirstOrDefault();
             if (obj != null)
             {
-                return true;
+                if (obj.Active== true)
+                return obj.UserId;
+                else
+                    return -2;
             }
-            return false;
+            return -1;
         }
         public void InsertUser(User user)
         {
             context3.Users.Add(user);
-            context3.SaveChanges();
+
+          
         }
 
         public void DeleteUser(int UserId)
