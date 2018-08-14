@@ -14,7 +14,7 @@ namespace Collection.Repository
 
         public List<Comment> GetComments()
         {
-            var comments = context4.Comments.Include(c => c.Invoice).Include(c => c.User);
+            var comments = context4.Comments.Include(c => c.Invoice1).Include(c => c.User);
 
             return context4.Comments.ToList();
         }

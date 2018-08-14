@@ -110,11 +110,11 @@
                                 "<td>" + item.Amount + "</td> " +
                                 "<td>" + "<input type='checkbox'>" + "</td>" +
                                 "<td>" + "<input type='checkbox'>" + "</td>" +
-                                "<td>" + "<button id='searchbtn' type='button' onclick='comment(" + item.InvoiceNo + ")' src='/Content/images/edit.png' class='btn btn-default'>" + "Comment" + "</button>" + "</td>" +
-                                "<td>" + "<img onclick='edit(" + item.InvoiceNo + ")' src='/Content/images/edit.png' />" +
+                                "<td>" + "<button id='searchbtn' type='button' onclick='comment(" + item.InvoiceId + ")' src='/Content/images/edit.png' class='btn btn-default'>" + "Comment" + "</button>" + "</td>" +
+                                "<td>" + "<img onclick='edit(" + item.InvoiceId + ")' src='/Content/images/edit.png' />" +
 
                                 "</td>" +
-                                "<td>" + "<img onclick='del(" + item.InvoiceNo + ")' src='/Content/images/delete.png'/>" + "</td>";
+                                "<td>" + "<img onclick='del(" + item.InvoiceId + ")' src='/Content/images/delete.png'/>" + "</td>";
                             +"</tr>";
 
                             $('#inTable').append(rows);
@@ -132,13 +132,13 @@
         function edit(x) {
 
 
-            window.location.href = '/Home/Editinvoice/' + x;
+            window.location.href = '/Invoice/EditInvoice/' + x;
         }
 
 
         function comment(x) {
 
-            window.location.href = '/Home/Editinvoice/' + x;
+            window.location.href = '/Invoice/EditInvoice/' + x;
         }
 
         function del(x) {

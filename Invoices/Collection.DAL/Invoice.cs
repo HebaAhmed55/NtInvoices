@@ -11,20 +11,57 @@ namespace Collection.DAL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Invoice
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Invoice()
+        {
+            this.Comments = new HashSet<Comment>();
+        }
+
         public int InvoiceId { get; set; }
+
+        [Required]
+        [Display(Name = "Invoice NO")]
         public int InvoiceNo { get; set; }
+
+        [Required]
+        [Display(Name = "Issue Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public System.DateTime IssueDate { get; set; }
+
+        [Required]
+        [Display(Name = "Amount")]
         public decimal Amount { get; set; }
+
+        [Required]
+        [Display(Name = "Collection Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public System.DateTime CollectDate { get; set; }
+
+        [Required]
+        [Display(Name = " Actual Collection Date")]
+       
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public System.DateTime ActCollectDate { get; set; }
+
+        [Display(Name = "Suspended")]
         public Nullable<bool> Suspended { get; set; }
+
+        [Display(Name = "Collected")]
         public Nullable<bool> Collected { get; set; }
+
+        [Required]
+        [Display(Name = "Customer")]
         public Nullable<int> Cus_id { get; set; }
-    
-        public virtual Comment Comment { get; set; }
+
         public virtual Customer Customer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

@@ -10,10 +10,10 @@
         <EntityTypeShape EntityType="InvoicesModel.Invoice" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InvoicesModel.Type" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="InvoicesModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="InvoicesModel.FK_Comment_Invoice" ManuallyRouted="false" />
         <AssociationConnector Association="InvoicesModel.FK_Comment_User" ManuallyRouted="false" />
         <AssociationConnector Association="InvoicesModel.FK_Invoice_Customer" ManuallyRouted="false" />
         <AssociationConnector Association="InvoicesModel.FK_User_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="InvoicesModel.FK_Comment_Invoice1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

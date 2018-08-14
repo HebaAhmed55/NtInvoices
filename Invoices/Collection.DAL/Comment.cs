@@ -11,16 +11,26 @@ namespace Collection.DAL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Comment
     {
         public int CommentId { get; set; }
+
+        [Display(Name = "Date")]
+        
         public System.DateTime Date { get; set; }
+
+        [Required]
+        [Display(Name = "Comment")]
         public string Comment1 { get; set; }
+
         public int Invoice_id { get; set; }
+
+        [Display(Name = "User Name")]
         public int User_id { get; set; }
-    
-        public virtual Invoice Invoice { get; set; }
+
         public virtual User User { get; set; }
+        public virtual Invoice Invoice1 { get; set; }
     }
 }

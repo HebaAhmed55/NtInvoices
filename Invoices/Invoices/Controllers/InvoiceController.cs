@@ -161,10 +161,11 @@ namespace Invoices.Controllers
 
             foreach (var i in invoice)
             {
-                if (i.IssueDate <= issueto && i.IssueDate >= issuefrom && (i.Customer.CustomerName == name || name == "0"))
+                if (i.IssueDate <= issueto && i.IssueDate >= issuefrom  && (i.Customer.CustomerName == name || name == "0"))
                 {
                     sorted.Add(i);
                 }
+               
             }
 
             var a = JsonConvert.SerializeObject(sorted, Formatting.None,
@@ -200,6 +201,17 @@ namespace Invoices.Controllers
             com.InsertComment(c);
 
             var comments = com.GetComments();
+            var comments2 = new List<Comment>();
+
+            foreach (var item in comments)
+            {
+                if (item.Invoice_id == Convert.ToInt32(InvoiceId))
+                {
+                    comments2.Add(item);
+                }
+            
+             }
+
 
             var a = JsonConvert.SerializeObject(comments, Formatting.None,
                       new JsonSerializerSettings()
@@ -210,6 +222,30 @@ namespace Invoices.Controllers
             return a;
 
 
+        }
+
+        public String filltable(string InvoiceId)
+        {
+            var comments = com.GetComments();
+            var comments2 = new List<Comment>();
+
+            foreach (var item in comments)
+            {
+                if (item.Invoice_id == Convert.ToInt32(InvoiceId))
+                {
+                    comments2.Add(item);
+                }
+
+            }
+
+
+            var a = JsonConvert.SerializeObject(comments, Formatting.None,
+                      new JsonSerializerSettings()
+                      {
+                          ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                      });
+
+            return a;
         }
 
 

@@ -59,13 +59,13 @@
         </EntityType>
         <Association Name="FK_Comment_Invoice">
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
-          <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Invoice">
               <PropertyRef Name="InvoiceId" />
             </Principal>
             <Dependent Role="Comment">
-              <PropertyRef Name="CommentId" />
+              <PropertyRef Name="Invoice_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -141,8 +141,8 @@
           <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Invoice_id" Type="Int32" Nullable="false" />
           <Property Name="User_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Invoice" Relationship="Self.FK_Comment_Invoice" FromRole="Comment" ToRole="Invoice" />
           <NavigationProperty Name="User" Relationship="Self.FK_Comment_User" FromRole="Comment" ToRole="User" />
+          <NavigationProperty Name="Invoice1" Relationship="InvoicesModel.FK_Comment_Invoice1" FromRole="Comment" ToRole="Invoice" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -167,8 +167,8 @@
           <Property Name="Suspended" Type="Boolean" />
           <Property Name="Collected" Type="Boolean" />
           <Property Name="Cus_id" Type="Int32" />
-          <NavigationProperty Name="Comment" Relationship="Self.FK_Comment_Invoice" FromRole="Invoice" ToRole="Comment" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Invoice_Customer" FromRole="Invoice" ToRole="Customer" />
+          <NavigationProperty Name="Comments" Relationship="InvoicesModel.FK_Comment_Invoice1" FromRole="Invoice" ToRole="Comment" />
         </EntityType>
         <EntityType Name="Type">
           <Key>
@@ -192,18 +192,6 @@
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_User" FromRole="User" ToRole="Comment" />
           <NavigationProperty Name="Type" Relationship="Self.FK_User_Type" FromRole="User" ToRole="Type" />
         </EntityType>
-        <Association Name="FK_Comment_Invoice">
-          <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
-          <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Invoice">
-              <PropertyRef Name="InvoiceId" />
-            </Principal>
-            <Dependent Role="Comment">
-              <PropertyRef Name="CommentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Comment_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
@@ -246,10 +234,6 @@
           <EntitySet Name="Invoices" EntityType="Self.Invoice" />
           <EntitySet Name="Types" EntityType="Self.Type" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK_Comment_Invoice" Association="Self.FK_Comment_Invoice">
-            <End Role="Invoice" EntitySet="Invoices" />
-            <End Role="Comment" EntitySet="Comments" />
-          </AssociationSet>
           <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
             <End Role="User" EntitySet="Users" />
             <End Role="Comment" EntitySet="Comments" />
@@ -262,7 +246,23 @@
             <End Role="Type" EntitySet="Types" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
+          <AssociationSet Name="FK_Comment_Invoice1" Association="InvoicesModel.FK_Comment_Invoice1">
+            <End Role="Invoice" EntitySet="Invoices" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Comment_Invoice1">
+          <End Type="InvoicesModel.Invoice" Role="Invoice" Multiplicity="1" />
+          <End Type="InvoicesModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="InvoiceId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Invoice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

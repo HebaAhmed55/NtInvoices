@@ -24,6 +24,7 @@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Active)
+                   
                 </th>
                 <th>
                     Edit
@@ -44,7 +45,17 @@
                         @Html.DisplayFor(modelItem => item.CustomerName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Active)
+                        @*@Html.DisplayFor(modelItem => item.Active)*@
+                        @{
+                            if (item.Active == true)
+                            {
+                                <input type="checkbox" checked disabled />
+                            }
+                            else
+                            {
+                                <input type="checkbox" disabled />
+                            }
+                        }
                     </td>
                     <td>
                         @Html.ActionLink("Edit", "EditCustomer", new { id = item.CustomerId }, new { @class = "glyphicon glyphicon-pencil" })

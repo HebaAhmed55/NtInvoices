@@ -43,7 +43,7 @@
                     @Html.DisplayNameFor(model => model.Collected)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Comment.Comment1)
+                    @Html.DisplayNameFor(model => model.Comments)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Customer.CustomerName)
@@ -75,10 +75,30 @@
                         @Html.DisplayFor(modelItem => item.ActCollectDate)
                     </td>
                     <td>
-                       @Html.DisplayFor(modelItem => item.Suspended)
+               @*        @Html.DisplayFor(modelItem => item.Suspended)*@
+                        @{ 
+                            if(item.Suspended== true)
+                            {
+                                <input type="checkbox" checked disabled />
+                            }
+                            else
+                            {
+                                <input type="checkbox"  disabled />
+                            }
+                        }
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Collected)
+                        @*@Html.DisplayFor(modelItem => item.Collected)*@
+                        @{
+                            if (item.Collected == true)
+                            {
+                                <input type="checkbox" checked disabled />
+                            }
+                            else
+                            {
+                                <input type="checkbox" disabled />
+                            }
+                        }
                     </td>
                     <td>
                         <input type="submit" value="Comment" class="btn btn-default" onclick="openBox(@item.InvoiceId)"/>
@@ -99,10 +119,10 @@
         </table>
     </div>
 </div>
-<h2>Modal Example</h2>
+@*<h2>Modal Example</h2>
 
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+ Trigger/Open The Modal 
+<button id="myBtn">Open Modal</button>*@
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -116,21 +136,11 @@
                     <th>User Name</th>
                     <th>Comment</th>
                     <th>Date</th>
-                    <th>Delete</th>
 
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Clist)
-                {
-                    <tr>
-
-                        <td>@item.User.UserName</td>
-                        <td>@item.Comment1</td>
-                        <td>@item.Date</td>
-                        <td></td>
-                    </tr>
-                }
+             
             </tbody>
         </table>
 
@@ -173,6 +183,43 @@
             document.getElementById('InvoiceId').val = a;
             var b = document.getElementById('InvoiceId').val;
 
+           
+            var comm = $("#comm").val();
+            var invoiceid = document.getElementById('InvoiceId').val;
+            $.ajax({
+                type: "POST",
+                url: '/Invoice/filltable',
+                data: { InvoiceId: invoiceid, Comment: comm },
+                type: "POST",
+
+                dataType: 'json',
+
+                success: function (data) {
+                    $('#commentTable tbody > tr').remove();
+                    $.each(data, function (index, item) {
+
+                        //if (item.Invoice_ID == invoiceid) {
+                        var rows = "<tr>" +
+
+                            "<td>" + item.User.UserName + "</td>" +
+                            "<td>" + item.Comment1 + "</td>" +
+                            "<td>" + item.Date + "</td>" +
+                            "<td>" + "</td>" +
+
+                            +"</tr>";
+
+                        $('#commentTable').append(rows);
+
+                        // }
+
+                    });
+                },
+                error: function (response) {
+                    alert("Invalid");
+                }
+
+            });
+
         }
 
         // When the user clicks on <span> (x), close the modal
@@ -188,7 +235,7 @@
         }
 
         function add() {
-            alert("once");
+            
             var comm = $("#comm").val();
             var invoiceid = document.getElementById('InvoiceId').val;
             $.ajax({
@@ -203,7 +250,7 @@
                     $('#commentTable tbody > tr').remove();
                     $.each(data, function (index, item) {
 
-                        if (item.Invoice_ID == invoiceid) {
+                        //if (item.Invoice_ID == invoiceid) {
                             var rows = "<tr>" +
 
                                 "<td>" + item.User.UserName + "</td>" +
@@ -215,7 +262,7 @@
 
                             $('#commentTable').append(rows);
 
-                            }
+                           // }
 
                         });
                 },

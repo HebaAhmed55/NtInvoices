@@ -54,13 +54,13 @@
   </EntityType>
   <Association Name="FK_Comment_Invoice">
     <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
-    <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Invoice">
         <PropertyRef Name="InvoiceId" />
       </Principal>
       <Dependent Role="Comment">
-        <PropertyRef Name="CommentId" />
+        <PropertyRef Name="Invoice_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

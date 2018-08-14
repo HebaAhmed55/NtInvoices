@@ -15,7 +15,7 @@ namespace Collection.Repository
 
         public List<Invoice> GetInvoices()
         {
-            var invoices = context2.Invoices.Include(i => i.Comment).Include(i => i.Customer);
+            var invoices = context2.Invoices.Include(i => i.Comments).Include(i => i.Customer);
             return context2.Invoices.ToList();
         }
 

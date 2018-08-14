@@ -209,6 +209,8 @@
     <Content Include="Content\bootstrap-nat1.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\delete.png" />
+    <Content Include="Content\Images\edit.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Views\favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
